@@ -10,7 +10,7 @@ console.log(checkNums(listOfNumbers));
 module.exports = checkNums;
 
 function checkNums(listOfNumbers){
-    return [4].every((e) => {
+    return [4, 8, 12, 16].every((e) => {
         return listOfNumbers.includes(e);
     })
 }
