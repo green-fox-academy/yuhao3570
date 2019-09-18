@@ -1,5 +1,6 @@
 'use strict';
 
+//Create a map with the following key-value pairs.
 let product = new Map([
     ['Eggs', 200],
     ['Milk', 200],
@@ -10,20 +11,20 @@ let product = new Map([
 ]);
 
 //Which products cost less than 201? (just the name)
-let less = "";
+let less = '';
 for(let [item, price] of product){
     if(price < 201){
-        less += item +" ";
+        less += item + ' ';
     }
 }
 console.log(less);
 
 
 //Which products cost more than 150? (name + price)
-let more = "";
+let more = '';
 for(let entry of product){
     if(entry[1]> 150){
-        more += entry.join(" ") + " ";
+        more += entry.join(' ') + ' ';
     }
 }
 console.log(more);

@@ -1,5 +1,5 @@
 'use strict';
-
+// Create a map with the following key-value pairs.
 let product = new Map([
     ['Eggs', 200],
     ['Milk', 200],
@@ -20,7 +20,7 @@ for(let [item, price] of product){
         [key, value] = [item, price];
     }
 }
-console.log('Most expensive product is: ', key);
+console.log("Most expensive product is: ", key);
 
 // What is the average price?
 console.log(Array.from(product.values()).reduce((a, b)=>a+b)/6);

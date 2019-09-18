@@ -13,9 +13,9 @@ let interval = (timeInterval, word) => {
 }
 
 let multi = (callback) => {
-    interval(0, "Apple");
-    interval(1000, "pear");
-    interval(3000, "melon");
+    interval(0, 'Apple');
+    interval(1000, 'pear');
+    interval(3000, 'melon');
     interval(5000, 'grapes');
 }
 

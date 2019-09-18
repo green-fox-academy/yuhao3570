@@ -46,13 +46,13 @@ for(let aliceEntry of alice){
 console.log(aliceTotal);
 
 // Who buys more Rice?
-if(!bob.has("Rice")){
-    bob.set("Rice", 0);
+if(!bob.has('Rice')){
+    bob.set('Rice', 0);
     console.log("Bob did not buy Rice!");
 }
 
-if(!alice.has("Rice")){
-    alice.set("Rice", 0);
+if(!alice.has('Rice')){
+    alice.set('Rice', 0);
     console.log("Alice did not buy Rice!");
 }
 
@@ -67,13 +67,13 @@ if(bob.has('Rice') && alice.has('Rice')){
 }
 
 // Who buys more Potato?
-if(!bob.has("Potato")){
-    bob.set("Potato", 0);
+if(!bob.has('Potato')){
+    bob.set('Potato', 0);
     console.log("Bob did not buy Potato!");
 }
 
-if(!alice.has("Potato")){
-    alice.set("Potato", 0);
+if(!alice.has('Potato')){
+    alice.set('Potato', 0);
     console.log("Alice did not buy Potato!");
 }
 

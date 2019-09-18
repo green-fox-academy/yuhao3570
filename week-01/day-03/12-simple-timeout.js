@@ -5,7 +5,7 @@
 const apple = (interval) => {
     let counter = 0;
     interval = setInterval(()=>{
-        console.log("Apple");
+        console.log('Apple');
         counter++;
         if(counter === 4){
             clearInterval(interval)
