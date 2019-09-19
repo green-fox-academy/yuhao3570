@@ -27,7 +27,7 @@ console.log(calculator());
 module.exports = calculator;
 
 function calculator(){
-    if(!['+', '-', '*', '/'].includes(args[0])){
+    if(!['+', '-', '*', '/', '%'].includes(args[0])){
         console.log("Invalid operation!");
         return;
     }
@@ -51,8 +51,9 @@ function calculator(){
             case '/':
                 result = num1 / num2;
                 break;
+            case '%':
+                result = num1 % num2;
         }
         return result;
     }
-
 }
