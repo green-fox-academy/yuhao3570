@@ -38,3 +38,5 @@ console.log(test);
 
 test.play();
 console.log(test);
+
+module.exports = Animal;

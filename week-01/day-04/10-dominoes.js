@@ -22,4 +22,5 @@ const dominoes = initializeDominoes();
 
 
 
+
 console.log(dominoes.toString());

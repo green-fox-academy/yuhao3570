@@ -27,3 +27,5 @@ let test = new Sharpie('black', 10.5);
 console.log(test);
 test.use();
 console.log(test);
+
+module.exports = Sharpie;
