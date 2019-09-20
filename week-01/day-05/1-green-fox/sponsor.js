@@ -1,6 +1,6 @@
 const Person = require('./person');
 
-function Sponsor(name = 'Jane Doe', age = 30, gender = 'female', company = 'Google', hiredStudents = 0){
+function Sponsor(name, age, gender, company = 'Google', hiredStudents = 0){
     Person.call(name, age, gender);
     this.company = company;
     this.hiredStudents = hiredStudents;

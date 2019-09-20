@@ -1,6 +1,6 @@
 const Person = require('./person');
 
-function Mentor(name = 'Jane Doe', age = 30, gender = 'female', level = 'intermediate'){
+function Mentor(name, age, gender, level = 'intermediate'){
     Person.call(name, age, gender);
     this.level = level;
 }
