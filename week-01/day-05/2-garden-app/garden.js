@@ -9,15 +9,26 @@ class Garden{
 
     water(amount){
         console.log(`Watering with ${amount}`);
+
+        let counter = 0;
+        for (let plants of [this.trees, this.flowers]){
+            for(let plant of plants){
+                if(plant.needWater){
+                    counter++;
+                }
+            }
+        }
+        let amountEach = amount / counter;
+
         this.trees.forEach(tree => {
             if(tree.needWater){
-                tree.addWater(amount);
+                tree.addWater(amountEach);
             }
         })
 
         this.flowers.forEach(flower => {
             if(flower.needWater){
-                flower.addWater(amount);
+                flower.addWater(amountEach);
             }
         })
         this.print();

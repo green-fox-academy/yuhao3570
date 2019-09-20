@@ -12,5 +12,5 @@ garden.addTree(new Plant('purple', 0, 0.4, 10));
 garden.addTree(new Plant('orange', 0, 0.4, 10));
 
 garden.print();
-garden.water(20);
+garden.water(40);
 garden.water(70);
