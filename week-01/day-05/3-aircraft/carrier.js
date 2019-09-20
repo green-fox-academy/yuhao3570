@@ -16,32 +16,18 @@ class Carrier{
             throw 'Please restore storage before fill tha aircrafts!';
         }
 
-        let totalAmmoNeeded = this.crafts.reduce( (e, craft) => {
-            return (craft.maxAmmo - craft.ammo) + e;
-        }, 0)
-        console.log('a', totalAmmoNeeded);
-        if(this.storage >= totalAmmoNeeded){
+        //fill F35
+        this.crafts.forEach( craft => {
+            if(craft.isPriority()){
+                this.storage = craft.refill(this.storage);
+                }
+        }) 
+
+        //fill the rest
+        if(this.storage > 0){
             this.crafts.forEach( craft => {
                 this.storage = craft.refill(this.storage);
-            })
-
-        } else {
-            //fill F35 first
-            this.crafts.forEach( craft => {
-                if(craft.isPriority()){
-                    craft.getStatus();
-                    this.storage = craft.refill(this.storage);
-                    // console.log("points: ");
-                    craft.getStatus();
-                }
-            }) 
-
-            //fill the rest
-            if(this.storage > 0){
-                this.crafts.forEach( craft => {
-                    this.storage = craft.refill(this.storage);
-                });
-            }
+            });
         }
     }
 

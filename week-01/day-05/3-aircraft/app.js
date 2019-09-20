@@ -6,7 +6,7 @@ const Aircraft = require('./aircraft');
 const Carrier = require('./carrier');
 
 let carrier1 = new Carrier(70, 5000);
-let carrier2 = new Carrier(20, 2000);
+let carrier2 = new Carrier(25, 2000);
 let carrier3 = new Carrier(1000, 0);
 
 carrier1.add(new Aircraft('F16'));

@@ -24,13 +24,13 @@ class Garden{
             if(tree.needWater){
                 tree.addWater(amountEach);
             }
-        })
+        });
 
         this.flowers.forEach(flower => {
             if(flower.needWater){
                 flower.addWater(amountEach);
             }
-        })
+        });
         this.print();
     }
 
@@ -42,7 +42,7 @@ class Garden{
             else{
                 console.log(`The ${flower.color} Flower doesn't need water`);
             }
-        })
+        });
 
         this.trees.forEach( tree => {
             if(tree.needWater){
@@ -51,7 +51,7 @@ class Garden{
             else{
                 console.log(`The ${tree.color} Tree doesn't need water`);
             }
-        })
+        });
         console.log('\n');
     }
 
