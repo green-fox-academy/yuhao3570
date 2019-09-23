@@ -5,7 +5,7 @@ abstract class Animal {
     height: number;
     married: boolean;
 
-    constructor(name: string, age: number, gender: string, height: number, married: boolean;){
+    constructor(name: string, age: number = 2, gender: string = 'F', height: number = 1.2, married: boolean = false){
         this.name = name;
         this.age = age;
         this.gender = gender;
