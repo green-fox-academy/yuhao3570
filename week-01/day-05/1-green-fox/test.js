@@ -42,6 +42,7 @@ for (let i = 0; i < 4; i++) {
 
 people.forEach((person) => {
   console.log(person.introduce());
+  
   person.getGoal();
 })
 
