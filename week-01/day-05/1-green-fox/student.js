@@ -1,6 +1,6 @@
 const Person = require('./person');
 
-function Student(name = 'Jane Doe', age = 30, gender = 'female', previousOrganization = 'The School of Life', skippedDays = 0){
+function Student(name, age, gender, previousOrganization = 'The School of Life', skippedDays = 0){
     Person.call(name, age, gender);
     this.previousOrganization = previousOrganization;
     this.skippedDays = skippedDays;

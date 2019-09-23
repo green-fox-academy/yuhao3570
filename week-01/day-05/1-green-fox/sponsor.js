@@ -1,6 +1,10 @@
 const Person = require('./person');
 
+<<<<<<< HEAD
 function Sponsor(name , age , gender , company = 'Google', hiredStudents = 0){
+=======
+function Sponsor(name, age, gender, company = 'Google', hiredStudents = 0){
+>>>>>>> f52fec16a3105e00d93372522ae7d84e11d1f17d
     Person.call(name, age, gender);
     this.company = company;
     this.hiredStudents = hiredStudents;
