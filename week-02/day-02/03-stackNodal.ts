@@ -6,7 +6,7 @@ class StackNodal implements Stack<string>{
     count: number;
 
     constructor(){
-        this.top = new Nodal();
+        this.top = null;
         this.count = 0;
     }
     
