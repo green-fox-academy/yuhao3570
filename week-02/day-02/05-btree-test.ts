@@ -16,4 +16,5 @@ myBT.print(myBT.root);
 console.log(myBT.search('a'));
 console.log(myBT.search('abc'));
 myBT.remove('hlo');
+myBT.remove('a');
 myBT.print(myBT.root);

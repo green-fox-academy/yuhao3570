@@ -29,14 +29,12 @@ class BinaryTree<T> implements Tree<T> {
         }
     }
 
-    insert(node: TreeNode<T>, newNode: TreeNode<T>, treeQueue: ArrayQueue<TreeNode<T>>){
+    insert(node: TreeNode<T>, newNode: TreeNode<T>, treeQueue: ArrayQueue<TreeNode<T>>): void{
         if(node.left === null){
             node.left = newNode;
-            newNode.up = node;
             return;
         }else if(node.right === null){
             node.right = newNode;
-            newNode.up = node;
             return;
         }else{
             treeQueue.add(node.left);
@@ -46,7 +44,7 @@ class BinaryTree<T> implements Tree<T> {
         this.insert(treeQueue.peek(), newNode, treeQueue);
     }
 
-    print(node: TreeNode<T>){
+    print(node: TreeNode<T>): void{
         if(node.left !== null){
             this.print(node.left);
         }
@@ -70,8 +68,9 @@ class BinaryTree<T> implements Tree<T> {
         while(node.right !== null){
             node = node.right;
         }
-        node.up.right = null;
-        return node.value;
+        let temp = node.value;
+        node = null;
+        return temp;
     }
 
     search(value: T): boolean {
