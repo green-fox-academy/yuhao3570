@@ -31,13 +31,17 @@ class Mines {
     }
 
     layMine() {
-        let row, col;
+        let row, col, minecount;
         for (let i = 0; i < this.mineNumber; i++) {
             row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
             col = Math.floor(Math.random() * (this.width - 1)) + 1;
-            this.mineList.add(row + '-' + col);
+            minecount = this.mineList.length;
+            if(this.mineList.add(row + '-' + col).length <= minecount){
+                i--;
+            }else{
+                this.mineBoard[row].get(col).setMine();
+            }
             console.log(`row: ${row}, col: ${col}`);
-            this.mineBoard[row].get(col).setMine();
         }
     }
 

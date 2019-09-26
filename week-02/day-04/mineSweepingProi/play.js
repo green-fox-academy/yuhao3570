@@ -8,3 +8,4 @@ mines.printBoard();
 console.log(Object.keys(mines.mineBoard).length);
 mines.layMine();
 console.log(mines.mineList);
+
