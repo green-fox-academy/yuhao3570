@@ -6,34 +6,17 @@ const read1 = readline.createInterface({
     output: process.stdout
 });
 
-// read1.setPrompt('$MineGame>');
-
-// let over = false;
-
-
-// const mines = mineBoardPrompt();
-
-// mines.printBoard();
-// // console.log(mineBoard.convertRowIndexToNumber('A'));
-// console.log(Object.keys(mines.mineBoard).length);
-// mines.layMine();
-// console.log(mines.mineList);
-
-// while(!over){
-
-// }
-
 mineBoardPrompt();
 
 async function mineBoardPrompt() {
-    let size = 0;
-    let mineNum = 0;
+    let size = 0, mineNum = 0;
+
     while (size <= 0 || size >= 100) {
-        size = parseInt(await readLineAsync("How big the gameplay should be (n)?"));
+        size = parseInt(await readLineAsync("How big the gameplay should be (n)?\n> "));
     }
 
-    while (mineNum <= 0 || mineNum > size) {
-        mineNum = parseInt(await readLineAsync("How many mines you'd like to find (k)?"))
+    while (mineNum <= 0 || mineNum > size * size / 2) {
+        mineNum = parseInt(await readLineAsync("How many mines you'd like to find (k)?\n > "))
     }
 
     console.log("Game Starts Now!");
@@ -41,10 +24,16 @@ async function mineBoardPrompt() {
     const mines = new Mines(size, mineNum);
 
     mines.printBoard();
-    // console.log(mineBoard.convertRowIndexToNumber('A'));
-    console.log(Object.keys(mines.mineBoard).length);
-    mines.layMine();
-    console.log(mines.mineList);
+
+    // console.log(Object.keys(mines.mineBoard).length);
+    // console.log(mines.mineList);
+
+
+    while(!mines.over){
+        
+    }
+
+
 
     read1.close();
 

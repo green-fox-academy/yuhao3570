@@ -8,6 +8,7 @@ class Mines {
         this.over = false;
         this.mineBoard = this.createBoard();
         this.mineList = new Set();
+        this.layMine();
     }
 
     createBoard() {
@@ -31,18 +32,28 @@ class Mines {
     }
 
     layMine() {
-        let row, col, minecount;
-        for (let i = 0; i < this.mineNumber; i++) {
+        let row, col;
+
+        while(this.mineList.size < this.mineNumber){
             row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
             col = Math.floor(Math.random() * (this.width - 1)) + 1;
-            minecount = this.mineList.length;
-            if(this.mineList.add(row + '-' + col).length <= minecount){
-                i--;
-            }else{
-                this.mineBoard[row].get(col).setMine();
-            }
-            console.log(`row: ${row}, col: ${col}`);
+            this.mineBoard[row].get(col).setMine();
+            this.mineList.add(row + '-' + col);
         }
+    }
+
+    getCell(index){
+        let postion = index.trim().split('-');
+        return this.mineBoard[postion[0]].get(postion[1]);
+    }
+
+    isMined(index){
+        return this.getCell(index).isMine;
+    }
+
+    lose(){
+        this.over = true;
+        console.log('Game Over');
     }
 
     printBoard() {
