@@ -34,37 +34,32 @@ class Mines {
 
     layMine() {
         let row, col;
-<<<<<<< HEAD
         while (this.mineList.size < this.mineNumber) {
             row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
             col = Math.floor(Math.random() * (this.width - 1)) + 1;
-=======
 
-        while(this.mineList.size < this.mineNumber){
-            row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
-            col = Math.floor(Math.random() * (this.width - 1)) + 1;
-            this.mineBoard[row].get(col).setMine();
->>>>>>> 09611a4338431cf78a7e64f5d46ff805cb2cc527
-            this.mineList.add(row + '-' + col);
+            while (this.mineList.size < this.mineNumber) {
+                row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
+                col = Math.floor(Math.random() * (this.width - 1)) + 1;
+                this.mineBoard[row].get(col).setMine();
+                this.mineList.add(row + '-' + col);
+            }
         }
     }
 
-<<<<<<< HEAD
-=======
-    getCell(index){
+    getCell(index) {
         let postion = index.trim().split('-');
         return this.mineBoard[postion[0]].get(postion[1]);
     }
 
-    isMined(index){
+    isMined(index) {
         return this.getCell(index).isMine;
     }
 
-    lose(){
+    lose() {
         this.over = true;
         console.log('Game Over');
     }
->>>>>>> 09611a4338431cf78a7e64f5d46ff805cb2cc527
 
     printBoard() {
         let toPrint = '';
@@ -98,16 +93,16 @@ class Mines {
         return this.mineBoard[pos[0]].get(pos[1]);
     }
 
-    loss(index){
+    loss(index) {
         console.log(`${index} is Mined, Game Over`);
         this.over = true;
     }
 
-    clacNeighborPos(index){
+    clacNeighborPos(index) {
         let pos = index.trim().split('-');;
         let neighbors = [];
 
-        
+
     }
 
     convertRowIndexToNumber(row) {
