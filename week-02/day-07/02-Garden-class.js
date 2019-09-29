@@ -17,9 +17,4 @@ class Garden{
     }
 }
 
-
-let gar = new Garden(10, 5);
-
-console.log(gar.area());
-console.log(gar.circumference());
-console.log(gar.efficiency());
+module.exports = Garden;
