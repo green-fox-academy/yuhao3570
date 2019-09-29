@@ -45,7 +45,7 @@ function merge(left, right) {
 }
 
 function bsSort(array) {
-    let pos, temp;
+    let pos;
     let resultArr = [];
     if(array.length >= 1){
         resultArr.push(array[0]);

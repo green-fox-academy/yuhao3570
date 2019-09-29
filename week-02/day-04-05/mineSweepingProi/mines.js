@@ -6,8 +6,10 @@ class Mines {
         this.width = width;
         this.mineNumber = mineNumber;
         this.over = false;
+
         this.mineBoard = this.createBoard();
         this.mineList = new Set();
+        this.layMine();
     }
 
     createBoard() {
@@ -31,19 +33,14 @@ class Mines {
     }
 
     layMine() {
-        let row, col, minecount;
-        for (let i = 0; i < this.mineNumber; i++) {
+        let row, col;
+        while (this.mineList.size < this.mineNumber) {
             row = Object.keys(this.mineBoard)[Math.floor(Math.random() * (this.width - 1)) + 1];
             col = Math.floor(Math.random() * (this.width - 1)) + 1;
-            minecount = this.mineList.length;
-            if(this.mineList.add(row + '-' + col).length <= minecount){
-                i--;
-            }else{
-                this.mineBoard[row].get(col).setMine();
-            }
-            console.log(`row: ${row}, col: ${col}`);
+            this.mineList.add(row + '-' + col);
         }
     }
+
 
     printBoard() {
         let toPrint = '';
@@ -66,6 +63,27 @@ class Mines {
             }
             console.log(toPrint);
         }
+    }
+
+    isCellMined(index) {
+        return this.mineList.has(index.trim());
+    }
+
+    getCell(index) {
+        pos = index.trim().split('-');
+        return this.mineBoard[pos[0]].get(pos[1]);
+    }
+
+    loss(index){
+        console.log(`${index} is Mined, Game Over`);
+        this.over = true;
+    }
+
+    clacNeighborPos(index){
+        let pos = index.trim().split('-');;
+        let neighbors = [];
+
+        
     }
 
     convertRowIndexToNumber(row) {
