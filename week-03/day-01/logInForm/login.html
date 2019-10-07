@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Log In</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/login">
+        <div class="title">
+            <h2>ACCOUNT LOGIN</h2>
+        </div>
+
+        <div class="formBody">
+            <label for="name">USERNAME</label>
+            <input type="text" id="name" name="username" maxlength="20" minlength="6" autofocus required>
+
+            <label for="password">PASSWORD</label>
+            <input type="text" id="password" name="password" maxlength="20" minlength="12" required>
+        </div>
+
+        <div class="forgot-container">
+            <a href="/forgot-password"  class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <div class="submittion">
+            <button type="submit">Login</button>
+
+        </div>
+    </form>
+</body>
+</html>

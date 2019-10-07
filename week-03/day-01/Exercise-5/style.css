@@ -1,0 +1,21 @@
+h2{
+    color: blue;
+}
+
+h3{
+    color: orange;
+}
+
+.lv1{
+    list-style-type: square;
+    color: blue;
+}
+
+.lv2{
+    list-style-type: disc;
+    color: black;
+}
+
+#apple{
+    color: red;
+}

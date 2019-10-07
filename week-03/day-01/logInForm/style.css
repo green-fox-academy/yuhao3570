@@ -1,0 +1,57 @@
+html{
+    background-color: #F0F0F0;
+}
+
+body{
+    background-color: white;
+    margin: 30px auto;
+    padding: 70px;
+    width: 400px;
+    height: 400px;
+}
+
+label{
+    display:block;
+    font-size: 10px;
+    margin: 30px 10px 0px 0px;
+}
+
+input{
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]{
+    background-image: url(show.png) no-repeat scroll 7px 7px;
+    padding-right:10px;
+}
+
+input:focus{
+    border-color: 1px solid green;
+}
+
+a{
+    font-size: 10px;
+    margin-top: 10px;
+    position: absolute;
+    float: right;
+}
+
+button{
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#formBody{
+    padding: 50px;
+}
+

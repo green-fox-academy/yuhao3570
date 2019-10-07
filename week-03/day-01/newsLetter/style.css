@@ -1,0 +1,47 @@
+html{
+    background-image: linear-gradient(to right, red , yellow)}
+
+body{
+    margin: 50px auto;
+    width: 600px;
+    height: 600px;
+    border-radius: 10%;
+    background-color: white;
+}
+
+h1{
+    padding: 30px;
+    text-align: center;
+}
+
+label{
+    display:block;
+    font-size: 18px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    padding: 20px 0px 0px 0px;
+}
+
+input{
+    background-image: linear-gradient(to right, #F0F0F0 , white);
+    width: 400px;
+    height: 30px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.submission{
+    margin-top: 50px;
+    text-align: center;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}

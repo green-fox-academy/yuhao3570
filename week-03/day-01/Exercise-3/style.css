@@ -1,0 +1,23 @@
+div{
+    width: 380px;
+    padding: 16px;
+    margin: 10px;
+    background-color: #4185f4;
+}
+  
+span {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    padding: 50px;
+    display: block;
+}
+
+.north {
+    background-color: #e67676;
+}
+  
+.south {
+    background-color: #a9e6e6;
+}
+  

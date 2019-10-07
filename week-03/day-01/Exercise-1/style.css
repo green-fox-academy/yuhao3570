@@ -1,0 +1,10 @@
+div {
+    margin: 20px;
+    padding: 15px;
+    height: 145px;
+    width: 355px;
+    color: rgb(75, 75, 80);
+    font-size: 36px;
+    border: solid 5px #7dce94;
+    background-color: #1490a1;
+}
