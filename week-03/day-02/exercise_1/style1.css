@@ -1,0 +1,18 @@
+.item{
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.purple{
+    background-color:purple;
+}
