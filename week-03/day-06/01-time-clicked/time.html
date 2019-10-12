@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Machine</title>
+    <style>
+        *{
+            margin:30px 0px 30px;
+            font-size: 20px;;
+        }
+        .colored{
+            color: red;
+            background: lightgrey;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="loaded">
+            <span><strong>Script Loaded at </strong></span>
+            <span id="time" class="colored"></span>
+            <span class="colored"> GMT+0800 (China Standard Time)</span>
+        </div>
+        <button>Resolve</button>
+        <div id="reply">
+            <span>
+                <strong>Botton clicked after</strong>
+                <span class="colored">~~~~~~</span>
+                <span><strong> seconds</strong></span>
+            </span>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
