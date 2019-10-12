@@ -6,13 +6,18 @@ getRepo();
 
 document.querySelector('button').addEventListener('click', _ => {
     document.querySelector('.container').innerHTML = '';
-    const repo = popRepo().next().value.name;
-    document.querySelector('#title').textContent = repo;
-    getCommits(repo);
+    let next = popRepo().next()
+    if(next !== undefined){
+        const repo = next.value.name;
+        document.querySelector('#title').textContent = repo;
+        getCommits(repo);
+    }else{
+        document.querySelector('#title').textContent = 'someone';
+    }
 });
 
 async function getRepo() {
-    const response = await fetch ('https://api.github.com/orgs/green-fox-academy/repos', {headers});
+    const response = await fetch ('https://api.github.com/orgs/green-fox-academy/repos');
     const data = await response.json();
     repos[0] = data;
 }
@@ -22,7 +27,7 @@ function* popRepo() {
 }
 
 async function getCommits(repo) {
-    let commitHistory = await fetch(`https://api.github.com/repos/green-fox-academy/${repo}/commits`, {headers});
+    let commitHistory = await fetch(`https://api.github.com/repos/green-fox-academy/${repo}/commits`);
     const commits = await commitHistory.json();
 
     console.log(commits);

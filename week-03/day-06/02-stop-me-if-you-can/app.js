@@ -1,36 +1,29 @@
-// method 1
-/*
-setTimeout(() => {
-    alert('5 Seconds passed!');
-}, 5000);
-*/
+// 1.
+// let timeout = setTimeout(() => {
+//     alert('5 Seconds passed!');
+// }, 5000);
+// document.querySelector('#cancel').addEventListener('click', _ => {
+//     clearTimeout(timeout);
+// })
 
-document.querySelector('#cancel').addEventListener('click', _ => {
-    alert = () => {};
-})
-
-//2. 
-/*
-const promise = new Promise(function(resolve){
-    document.querySelector('#cancel').addEventListener('click', _ => {
-        resolve(() => {});
-    })
-})
-
-setTimeout(() => {
-    promise.then(res => alert = res)
-    alert('5 Seconds passed!');
-}, 5000);
-*/
+// 2. 
+// new Promise(function(resolve, reject){
+//     let timeout = setTimeout(() => {    
+//         resolve(alert('5 Seconds passed!'));  
+//     }, 5000);
+//     document.querySelector('#cancel').addEventListener('click', _ => {
+//         reject(clearTimeout(timeout));
+//     })
+// })
 
 //3.
 (async() => {
-    await setTimeout(() => {
-        alert('5 Seconds passed!');
-    }, 5000);
-    document.querySelector('#cancel').addEventListener('click',_ => (alert = () => {}))
+    await new Promise((resolve, reject) => {
+        let timeout = setTimeout(() => {    
+            resolve(alert('5 Seconds passed!'));  
+        }, 5000);
+        document.querySelector('#cancel').addEventListener('click', _ => reject(clearTimeout(timeout)));
+    }).catch(console.log('too early'))
 })()
 
-
-
-
+console.log('something');
