@@ -19,11 +19,11 @@ class Acorn extends React.Component {
   }
 
   buy() {
-    this.setState({ count: this.states.count + 1 });
+    this.setState({count: this.states.count + 1 });
   }
   eat() {
     if(this.state.count !== 0){
-        this.setState({ count: this.states.count - 1}); 
+        this.setState({count: this.states.count - 1}); 
     }
   }
   render() {
