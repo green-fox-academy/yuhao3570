@@ -1,0 +1,32 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.hotel {
+  border: 2px solid black;
+}
+
+.filter{
+  width: 200px;
+  border: 2px solid black;
+}
+
+
+.content{
+  display: flex;
+  flex: row;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
+
+li{
+  list-style-type: none;
+}
+
+*{
+  margin: 10px
+}
