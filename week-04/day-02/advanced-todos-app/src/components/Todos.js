@@ -37,6 +37,9 @@ class Todos extends React.Component{
     render(){
         return(
             <div className="todos">
+                <div className="heading">
+                    TODOS
+                </div>
                 <div className="input">
                     <Input addTodo={this.addTodoFromInput}/>
                 </div>
