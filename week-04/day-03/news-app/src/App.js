@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import News from './components/News';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      apiKey: 'f5bdda68a887445bb4d26831177a0efc',
+      country: 'cn',
+      articles: []
+    }
+
+    this.addNews = this.addNews.bind(this);
+  }
+
+  addNews(news){
+    this.setState({articles: news});
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <News url={`https://newsapi.org/v2/top-headlines?country=${this.state.country}&apiKey=${this.state.apiKey}`}
+              addNews={this.addNews}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
