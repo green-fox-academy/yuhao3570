@@ -29,6 +29,7 @@ class App extends React.Component {
     })
   }
 
+
   render(){
     return (
       <div className="App">
@@ -37,15 +38,12 @@ class App extends React.Component {
         </div>
 
         <div>
-         
-          <Router>
+          <Router >
             <Link to='/1'>1</Link><br/>
             <Link to='/2'>2</Link>
-
-            <Route path = '/1' component ={() => <ItemOne addUse={this.addUsage}/>} />
-            <Route path = '/2' component ={() => <ItemTwo addUse={this.addUsage}/>} />
+            <Route path = '/1' exact><ItemOne addUse={this.addUsage}/></Route>
+            <Route path = '/2' exact><ItemTwo addUse={this.addUsage}/></Route>
           </Router>
-          
         </div>
           
       </div>
