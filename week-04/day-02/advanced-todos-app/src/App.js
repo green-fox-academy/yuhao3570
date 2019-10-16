@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Todos from './components/Todos';
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Theme from './components/Theme';
 
 function App() {
@@ -11,11 +11,11 @@ function App() {
       <Theme/>
 
       <BrowserRouter>
-        <div> 
+        <div>
           <Switch>
             <Route path="/" component={App} exact />
             <Route path="/theme" component={Theme} />
-            {/* <Route path="/theme/:id" component={Contact} /> */}
+            <Route path="/theme/:id" component={Contact} />
           </Switch>
         </div>
       </BrowserRouter>
