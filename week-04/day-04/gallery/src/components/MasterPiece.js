@@ -34,14 +34,14 @@ const styles = {
 const MasterPiece = (props) => {
     return (
         <div className="central-viewer" style={styles.viewer}>
-            <button className="leftButton" style={styles.button} onClick={props.moveLeft}><img src='images/buttonArrow.svg' alt="left"/></button>
+            <button className="arrowLeft" style={styles.button} onClick={props.move}><img src='images/buttonArrow.svg' alt="left"/></button>
             <div className="details" style={{...styles.detail, backgroundImage: `url(${props.src})`}}>
                 <div style={styles.intro}>
                     <h4 style={{margin: '0px'}}>{props.title}</h4>
                     <p style={{margin: '5px 0px'}}>{props.description}</p>
                 </div>          
             </div>
-            <button className="rightButton" style={{...styles.button, transform:"rotate(180deg)"}} onClick={props.moveRight}><img src='images/buttonArrow.svg' alt="right"/></button>    
+            <button className="arrowRight" style={{...styles.button, transform:"rotate(180deg)"}} onClick={props.move}><img src='images/buttonArrow.svg' alt="right"/></button>    
         </div>
     );
 }
