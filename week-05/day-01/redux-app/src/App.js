@@ -4,6 +4,11 @@ import Inceraser from './components/Increaser';
 import Decreaser from './components/Decreaser';
 import Resetter from './components/Resetter';
 import Setter from './components/Setter';
+import Tags from './components/Tags';
+import Addtags from './components/AddTags';
+import ComplexCounter from './components/ComplexCounter';
+import RemoveTag from './components/RemoveTag';
+import RemoveAll from './components/RemoveAllTags';
 
 const styles = {
   row: {
@@ -24,8 +29,11 @@ function App() {
       </div>
 
       <div className="tags" style={styles.row}>
-
-
+        <Tags />
+        <Addtags />
+        <ComplexCounter />
+        <RemoveTag />
+        <RemoveAll />
       </div>
     </div>
   );

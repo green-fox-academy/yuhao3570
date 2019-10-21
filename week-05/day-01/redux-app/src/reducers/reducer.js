@@ -1,6 +1,6 @@
 const initState = {
     counter: 0,
-    tags: []
+    tags: ['blue', 'bold', 'hipster']
 };
 
 const tagsReducer = (state = initState, action) => {
@@ -40,24 +40,27 @@ const tagsReducer = (state = initState, action) => {
 
     // tag actions
     if(action.type === 'ADD_TAG'){
-        if(!state.tags.includes(action.tag)){
-            state.tags.push(action.tag);
-            return {
-                ...state,
-                tags: state.tags
+        let tagsCopy = [...state.tags];
+        for(let tag of action.tags.split(',')){
+            if(!tagsCopy.includes(tag)){
+                tagsCopy.push(tag);
             }
         }
-        return state;
+
+        return {
+            ...state,
+            tags: tagsCopy
+        }
     }
 
     if(action.type === 'REMOVE_TAG'){
-        if(state.tags.includes(action.tag)){
+        let tagsCopy = [...state.tags];
+        if(tagsCopy.includes(action.tag)){
             return {
                 ...state,
-                tags: state.tags.filter(tag => tag !== action.tag)
+                tags: tagsCopy.filter(tag => tag !== action.tag)
             }
         }
-        return state;
     }
 
     if(action.type === 'REMOVE_TAGS'){

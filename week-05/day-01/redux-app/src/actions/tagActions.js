@@ -1,7 +1,7 @@
-function addTag(tag){
+function addTag(tags){
     return {
         type: 'ADD_TAG',
-        tag
+        tags
     }
 }
 
