@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Inceraser from './components/Increaser';
 import Decreaser from './components/Decreaser';
+import Resetter from './components/Resetter';
+import Setter from './components/Setter';
 
 const styles = {
   row: {
@@ -17,7 +19,8 @@ function App() {
       <div className="counters" style={styles.row}>
         <Inceraser />
         <Decreaser />
-
+        <Resetter />
+        <Setter />
       </div>
 
       <div className="tags" style={styles.row}>

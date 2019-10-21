@@ -8,7 +8,7 @@ function Increaser({ counter, handleIncrease }) {
         <div className="increaser">
             <h2>The Increaser</h2>
             <p>{counter}</p>
-            <input value={amount} onChange={(event) => setIncreaseAmount(parseInt(event.target.value))}></input>
+            <input value={amount} onChange={(event) => setIncreaseAmount(parseInt(event.target.value))}></input><br/>
             <button className='increase' onClick={() => {handleIncrease(amount || 1); setIncreaseAmount('')}}>Increase</button>
         </div>
     )
