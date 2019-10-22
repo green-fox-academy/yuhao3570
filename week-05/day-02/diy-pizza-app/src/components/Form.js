@@ -23,11 +23,15 @@ function PizzaForm() {
         setData({
             ...data,
             [name]: type === 'checkbox' 
-                    ? (topping.includes(value) 
-                        ? topping.filter(top => top !== value) 
-                        : [...topping, value])
+                    ? toggleTopping(value)
                     : value
         })
+    }
+
+    const toggleTopping = (value) => {
+        return (topping.includes(value)
+                ? topping.filter(top => top !== value) 
+                : [...topping, value])
     }
 
     return (
