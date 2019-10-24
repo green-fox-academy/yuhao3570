@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="/assets/dashboardStyle.css">
+</head>
+<body>
+  <% forecasts.forEach(forecast => { %>
+    <% let weather = forecast.weather[0] %>
+    <div class="miniForecast">
+
+      <div class="location">
+        <h2><%=forecast.city %></h2>
+        <p><%=forecast.location %></p>
+      </div>
+
+      <div class="weather">
+        <h2><%=weather.temp + "°C"%></h2>
+        <img src="<%="/assets/"+weather.icon+".png"%>">
+      </div>
+
+    </div>
+  <% }) %>
+</body>
+</html>
