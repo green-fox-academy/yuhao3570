@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather for <%=cityId %></title>
+    <link rel="stylesheet" href="/assets/detailViewStyle.css">
+</head>
+
+<body>
+    <% if(weatherDetail === undefined){ %>
+      <h2>No weather data for city: <%=cityId%></h2>
+    <% } else {%>
+      <h2><%=cityId.toUpperCase()%></h2>
+      <div class="weatherContainer">
+        <% weatherDetail.weather.forEach(weather => { %>
+            <div class="weather">
+            <img src="<%="/assets/"+weather.icon+".png"%>">
+            <h2><%=weather.temp + "°C"%></h2>
+            <p><%=weather.message%></p>
+            </div>
+        <% })%>
+      </div>
+    <% }%>
+
+</body>
+
+</html>

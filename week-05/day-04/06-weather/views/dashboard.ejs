@@ -10,7 +10,7 @@
 <body>
   <% forecasts.forEach(forecast => { %>
     <% let weather = forecast.weather[0] %>
-    <div class="miniForecast">
+    <a class="miniForecast" href= "<%="/cities/".concat(forecast.city.toLowerCase())%>" >
 
       <div class="location">
         <h2><%=forecast.city %></h2>
@@ -22,7 +22,7 @@
         <img src="<%="/assets/"+weather.icon+".png"%>">
       </div>
 
-    </div>
+    </a>
   <% }) %>
 </body>
 </html>

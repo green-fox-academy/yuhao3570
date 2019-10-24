@@ -1,0 +1,28 @@
+body {
+  background-color: lightgray;
+}
+
+.weatherContainer{
+  margin: 50px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: lightgray;
+}
+
+.weather {
+  height: 400px;
+  width: 150px;
+  margin: 20px;
+  border-radius: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+img{
+  width: 120px;
+  height: 100px;
+}

@@ -72,6 +72,16 @@ app.get('/', (req, res) => {
 
 app.get('/cities/:cityId', (req, res) => {
   res.render('detailView', {
-    weatherDetail: forecasts[req.params.cityId]
+    cityId: req.params.cityId,
+    weatherDetail: findCity(req.params.cityId)
   })
 })
+
+const findCity = (cityId) => {
+  return (
+    forecasts.filter(
+      forecast => forecast.city.toLocaleLowerCase() === cityId)
+  )[0];
+}
+
+console.log(findCity('s'))
