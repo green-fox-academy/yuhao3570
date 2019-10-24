@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+  
+a {
+    margin-right: 10px;
+}
+  
+table {
+    text-align: center;
+    border-collapse: collapse;
+}
+  
+th {
+    background: black;
+    color: white;
+}
+
+td {
+    width: 100%;
+    height: 4em;
+    border: 1px solid #333;
+}
