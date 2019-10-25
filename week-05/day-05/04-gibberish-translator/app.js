@@ -31,11 +31,9 @@ function translate(text) {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   let result = '';
   for(let letter of text){
-    if(vowels.includes(letter)){
-      result += (letter + 'l' + letter);
-    }else{
-      result += letter;
-    }
+    result += vowels.includes(letter)
+            ? (letter + 'l' + letter)
+            : letter;
   }
   return result;
 }
