@@ -2,7 +2,7 @@ const initState = {
     counter: 0,
 };
 
-const tagsReducer = (state = initState, action) => {
+const reducer = (state = initState, action) => {
     
     if(action.type === 'INCREASE'){
         return {
@@ -14,4 +14,4 @@ const tagsReducer = (state = initState, action) => {
     return state;
 }
 
-export default tagsReducer;
+export default reducer;

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
-import { increaseAction } from '../actions/counterActions';
+import { delayIncreaseAction } from '../actions/counterActions';
 
 const initState = {
-    amount: '',
-    delay: ''
+    amount: 1,
+    delay: 0
 }
 
 function Increaser({ counter, handleDelayedIncrease }) {
@@ -15,16 +15,15 @@ function Increaser({ counter, handleDelayedIncrease }) {
 
     const handleButtonClick = (event) => {
         event.preventDefault();
-
-        handleDelayedIncrease(amount || 1); 
-        setIncreaseAmount('');
+        handleDelayedIncrease(amount, delay);
+        setState(initState);
     }
 
     const handleChange = (event) => {
         let {name, value} = event.target;
         setState({
             ...record,
-            [name]: parseInt(value)
+            [name]: value
         })
     }
 
@@ -60,7 +59,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleDelayedIncrease: (amount) => dispatch(increaseAction(amount))
+        handleDelayedIncrease: (amount, delay) => dispatch(delayIncreaseAction(amount, delay))
     }
 }
 

@@ -5,12 +5,12 @@ function increaseAction(amount = 1) {
     }
 }
 
-function delayAction(){
-    return (
-        async () => {
-            
-        }
-    )
+function delayIncreaseAction(amount, delay){
+    return async (dispatch) => {
+        setTimeout(() => {
+            dispatch(increaseAction(parseInt(amount)));
+        }, parseInt(delay) * 1000);
+    }
 }
 
-export {increaseAction, decreaseAction, setAction, resetAction};
+export {increaseAction, delayIncreaseAction};
