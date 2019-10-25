@@ -83,5 +83,3 @@ const findCity = (cityId) => {
       forecast => forecast.city.toLocaleLowerCase() === cityId)
   )[0];
 }
-
-console.log(findCity('s'))
