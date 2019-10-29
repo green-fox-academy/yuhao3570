@@ -1,14 +1,14 @@
 const initState = {
   messages: [],
   sentMSGs: [],
-  loading: false,
-  sending: false,
+  updating: false,
 }
+
 export function reducer(state=initState, action) {
-  if(action.type === 'FETCH_MSG_START'){
+  if(action.type === 'FETCH_MSG_START' || 'SEND_MSG_START'){
     return {
       ...state,
-      loading: true
+      updating: true
     }
   }
 
@@ -20,18 +20,11 @@ export function reducer(state=initState, action) {
     }
   }
 
-  if(action.type === 'SEND_MSG_START'){
-    return {
-      ...state,
-      sending: true
-    }
-  }
-
   if(action.type === 'SEND_MSG_SUCCESS'){
     return {
       ...state,
-      sentMSGs: [...state.sentMSGs, action.sentMSG],
-      sending: false
+      messages: [action.sentMSG, ...state.messages],
+      updating: false
     }
   }
 
