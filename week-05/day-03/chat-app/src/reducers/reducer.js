@@ -1,11 +1,10 @@
 const initState = {
   messages: [],
-  sentMSGs: [],
   updating: false,
 }
 
 export function reducer(state=initState, action) {
-  if(action.type === 'FETCH_MSG_START' || 'SEND_MSG_START'){
+  if(action.type === 'FETCH_MSG_START' || action.type === 'SEND_MSG_START'){
     return {
       ...state,
       updating: true
@@ -16,7 +15,7 @@ export function reducer(state=initState, action) {
     return {
       ...state,
       messages: action.messages,
-      loading: false
+      updating: false
     }
   }
 

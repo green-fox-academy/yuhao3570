@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { postMSG, fetchMSG } from './actions/action';
 
-function App({messages, sentMSGs, submitMSG, loadMSG}) {
+function App({messages, submitMSG, loadMSG}) {
   let [inputText, setText] = useState('');
   const handleInputChange = (event) => {
     setText(event.target.value)
@@ -52,7 +52,6 @@ function App({messages, sentMSGs, submitMSG, loadMSG}) {
 const mapStateToProps = (state) => {
   return {
     messages: state.messages,
-    sentMSGs: state.sentMSGs
   }
 }
 

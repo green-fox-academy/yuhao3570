@@ -2,7 +2,7 @@ CREATE DATABASE todos;
 
 USE todos;
 
-CREATE TABLE IF NOT EXISTS todolist(
+CREATE TABLE IF NOT EXISTS todolist (
   id INT AUTO_INCREMENT PRIMARY KEY,
   item VARCHAR(255),
   deadline DATE,
