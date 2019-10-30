@@ -1,7 +1,7 @@
 const http = require('http');
 const PORT = 3000;
-const handleMovies = require('./movie');
-const handleMoviesWithID = require('./movieWithID');
+const handleMovies = require('./requestHandlers/movie');
+const handleMoviesWithID = require('./requestHandlers/movieWithID');
 const acceptedMethods = ['GET', 'POST', 'DELETE', 'PUT'];
 const authRequired = ['POST', 'DELETE', 'PUT'];
 let MOVIES = require('./movieData');

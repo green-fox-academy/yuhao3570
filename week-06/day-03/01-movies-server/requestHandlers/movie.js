@@ -14,7 +14,6 @@ module.exports = handleMovies = (req, res, genreFilter=false) => {
     res.end();
   }
   else if(req.method === 'POST') {
-
     let requestBody = '';
     req.on('data', (part) => {
       requestBody += part;
@@ -23,19 +22,20 @@ module.exports = handleMovies = (req, res, genreFilter=false) => {
     req.on('end', () => {
       const requestBodyObject = JSON.parse(requestBody);
 
-      if(!validatePostReqBody(res, requestBodyObject)){
-        res.end("hehe");
+      if(!validatePostRequestBody(res, requestBodyObject)){
+        res.end();
         return;
       }
 
       MOVIES.push(requestBodyObject);
+      res.statusCode = 201;
       res.write(`\nYou have posted movie: "${requestBodyObject.title}", thanks!`);
       res.end();
     });
   }
 }
 
-const validatePostReqBody = (res, requestBodyObject) => {
+const validatePostRequestBody = (res, requestBodyObject) => {
   if(!requestBodyObject.title){
     res.statusCode = 400;
     return false;
